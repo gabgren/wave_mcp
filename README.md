@@ -22,7 +22,7 @@ A Model Context Protocol (MCP) server that integrates Claude with Wave Accountin
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/wave_mcp.git
+git clone https://github.com/vinnividivicci/wave_mcp.git
 cd wave_mcp
 ```
 
