@@ -1,0 +1,5013 @@
+{
+  "input_types": {
+    "AccountCreateInput": {
+      "name": "AccountCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `accountCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "subtype",
+          "description": "The account subtype classification.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "AccountSubtypeValueCreateInput",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Currency of the account. Will default to business's currency.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the account.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "User defined description for the account.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "displayId",
+          "description": "User defined id for the account.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "restrictions",
+          "description": "Rules around how a user is able to modify this account. This field is only usable for specific applications.",
+          "defaultValue": null,
+          "type": {
+            "name": "AccountCreateRestrictions",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "AccountPatchInput": {
+      "name": "AccountPatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `accountPatch` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the account.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "sequence",
+          "description": "The most recent reversion you are aware of. As soon as something modifies an account, its sequence is incremented.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the account.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "User defined description for the account. Use null to unset the current value.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "displayId",
+          "description": "User defined id for the account. Use null to unset the current value.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "AccountCreateRestrictions": {
+      "name": "AccountCreateRestrictions",
+      "kind": "INPUT_OBJECT",
+      "description": "Rules around how a user is able to modify this account.",
+      "inputFields": [
+        {
+          "name": "canArchive",
+          "description": "Whether or not a user can archive this account.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "CustomerCreateInput": {
+      "name": "CustomerCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `customerCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name or business name of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "firstName",
+          "description": "First name of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "lastName",
+          "description": "Last name of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "address",
+          "description": "Address",
+          "defaultValue": null,
+          "type": {
+            "name": "AddressInput",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        },
+        {
+          "name": "displayId",
+          "description": "User defined id for the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "email",
+          "description": "Email of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "mobile",
+          "description": "Mobile telephone number of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "phone",
+          "description": "Telephone number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "fax",
+          "description": "Fax number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "tollFree",
+          "description": "Toll-free number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "website",
+          "description": "Website address of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "internalNotes",
+          "description": "Internal notes about the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Default currency used by the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "shippingDetails",
+          "description": "Details for shipping to the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "CustomerShippingDetailsInput",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "CustomerPatchInput": {
+      "name": "CustomerPatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `customerPatch` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name or business name of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "firstName",
+          "description": "First name of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "lastName",
+          "description": "Last name of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "address",
+          "description": "Address",
+          "defaultValue": null,
+          "type": {
+            "name": "AddressInput",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        },
+        {
+          "name": "displayId",
+          "description": "User defined id for the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "email",
+          "description": "Email of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "mobile",
+          "description": "Mobile telephone number of the principal contact.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "phone",
+          "description": "Telephone number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "fax",
+          "description": "Fax number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "tollFree",
+          "description": "Toll-free number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "website",
+          "description": "Website address of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "internalNotes",
+          "description": "Internal notes about the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Default currency used by the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "shippingDetails",
+          "description": "Details for shipping to the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "CustomerPatchShippingDetailsInput",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "CustomerDeleteInput": {
+      "name": "CustomerDeleteInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `customerDelete` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "ProductCreateInput": {
+      "name": "ProductCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `productCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "unitPrice",
+          "description": "Price per unit in the major currency unit (rounded to nearest 5 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "Product description.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "defaultSalesTaxIds",
+          "description": "Default sales taxes to apply on product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "ID",
+                "kind": "SCALAR",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "incomeAccountId",
+          "description": "Income account to associate with this product. Account must be one of subtypes: `INCOME`, `DISCOUNTS`, `OTHER_INCOME`.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "expenseAccountId",
+          "description": "Expense account to associate with this product. Account must be one of subtypes: `EXPENSE`, `COST_OF_GOODS_SOLD`, `PAYMENT_PROCESSING_FEES`, `PAYROLL_EXPENSES`.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "ProductPatchInput": {
+      "name": "ProductPatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `productPatch` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the product.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "Description of the product.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitPrice",
+          "description": "Price per unit in the major currency unit (rounded to nearest 5 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "defaultSalesTaxIds",
+          "description": "Default sales taxes to apply on product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "ID",
+                "kind": "SCALAR",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "incomeAccountId",
+          "description": "Income account to associate with this product. Account must be one of subtypes: `INCOME`, `DISCOUNTS`, `OTHER_INCOME`.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "expenseAccountId",
+          "description": "Expense account to associate with this product. Account must be one of subtypes: `EXPENSE`, `COST_OF_GOODS_SOLD`, `PAYMENT_PROCESSING_FEES`, `PAYROLL_EXPENSES`.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "ProductArchiveInput": {
+      "name": "ProductArchiveInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `productArchive` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "SalesTaxCreateInput": {
+      "name": "SalesTaxCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `salesTaxCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the tax.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "abbreviation",
+          "description": "An short form or code representing the sales tax. Max 10 characters, and MUST BE UNIQUE within business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "rate",
+          "description": "The current rate, as a decimal (e.g. 0.15 represents 15%; rounded to nearest 6 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "User defined description for the sales tax.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "taxNumber",
+          "description": "The tax's issued identification number from a taxing authority.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "showTaxNumberOnInvoices",
+          "description": "Display tax number beside the tax name on an invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "isCompound",
+          "description": "Is a compound tax, or stacked tax. This tax is calculated on top of the subtotal and other tax amounts.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "isRecoverable",
+          "description": "Is a recoverable tax. It is recoverable if you can deduct the tax that you as a business paid from the tax that you have collected.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "SalesTaxPatchInput": {
+      "name": "SalesTaxPatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `salesTaxPatch` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the sales tax.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Name of the tax.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "abbreviation",
+          "description": "An short form or code representing the sales tax",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "User defined description for the sales tax.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "taxNumber",
+          "description": "The tax's issued identification number from a taxing authority.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "showTaxNumberOnInvoices",
+          "description": "Display tax number beside the tax name on an invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "rates",
+          "description": "Tax rate information.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "SalesTaxRateInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SalesTaxArchiveInput": {
+      "name": "SalesTaxArchiveInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `salesTaxArchive` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the sales tax.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "MoneyTransactionCreateInput": {
+      "name": "MoneyTransactionCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input of the `moneyTransactionCreate` Mutation",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "externalId",
+          "description": "ID of the transaction in an external system. If you don't have one, generate a UUID and provide it.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "date",
+          "description": "Date of the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Date",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "Description for the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "notes",
+          "description": "Extra notes about the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "anchor",
+          "description": "Anchor item.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "MoneyTransactionCreateAnchorInput",
+              "kind": "INPUT_OBJECT",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "lineItems",
+          "description": "Line items.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "MoneyTransactionCreateLineItemInput",
+                  "kind": "INPUT_OBJECT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MoneyTransactionsCreateInput": {
+      "name": "MoneyTransactionsCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input of the `moneyTransactionsCreate` Mutation",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "transactions",
+          "description": "Array of transactions to create.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "MoneyTransactionDetails",
+                  "kind": "INPUT_OBJECT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceCreateInput": {
+      "name": "InvoiceCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "customerId",
+          "description": "The customer identifier to associate with invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "status",
+          "description": "Status of the Invoice.",
+          "defaultValue": "DRAFT",
+          "type": {
+            "name": "InvoiceCreateStatus",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Currency of the invoice. If not provided, will use the business's default currency.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "title",
+          "description": "Invoice title at the top of the document. If not provided, will use the business's default invoice title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "subhead",
+          "description": "Invoice subheading text. If not provided, will use the business's default invoice subheading.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "invoiceNumber",
+          "description": "Unique number assigned to the invoice. If not provided, will find the current largest invoice number and add 1.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "poNumber",
+          "description": "Purchase order or sales order number for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "invoiceDate",
+          "description": "Date when invoice is issued. If not provided, will use today's date.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to business's currency from the invoice's currency. Used to value the invoice income within Wave's accounting transactions.",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "dueDate",
+          "description": "Date when payment is due. If not provided, will apply the business's default invoice payment terms to `invoiceDate` value.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "items",
+          "description": "The line items (product, unit and price) that make up the invoiced sale.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "InvoiceCreateItemInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "discounts",
+          "description": "The discounts applied to the invoice (currently limited to max 1).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "InvoiceDiscountInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Invoice memo (notes) text. If not provided, will use the business's default invoice memo.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "footer",
+          "description": "Invoice footer text. If not provided, will use the business's default invoice footer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableAmexPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual invoice has been marked to not be payable by american express payment. If not provided, will use the business's default invoice settings american express payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableCreditCardPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual invoice has been marked to not be payable by card. If not provided, will use the business's default invoice credit card payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableBankPayments",
+          "description": "Within a business that is enabled to accept bank payments, indicates if this individual invoice has been marked to not be payable by bank payment. If not provided, will use the business's default invoice bank payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "itemTitle",
+          "description": "The label for the 'Item' column in the listing of line items on the invoice. If not provided, will use the business's default invoice column item title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitTitle",
+          "description": "The label for the 'Unit' column in the listing of line items on the invoice. If not provided, will use the business's default invoice column unit title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "priceTitle",
+          "description": "The label for the 'Price' column in the listing of line items on the invoice. If not provided, will use the business's default invoice column price title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "amountTitle",
+          "description": "The label for the 'Amount' (= unit x price) column in the listing of line items on the invoice. If not provided, will use the business's default invoice column amount title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideName",
+          "description": "Indicates whether item's product name in item column is hidden in the line items listing. If not provided, will use the business's default invoice item name visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideDescription",
+          "description": "Indicates whether item's description in item column is hidden in the line items listing. If not provided, will use the business's default invoice item description visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideUnit",
+          "description": "Indicates whether item's unit is hidden in the line items listing. If not provided, will use the business's default invoice item unit visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hidePrice",
+          "description": "Indicates whether item's price is hidden in the line items listing. If not provided, will use the business's default invoice item price visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideAmount",
+          "description": "Indicates whether item's amount is hidden in the line items listing. If not provided, will use the business's default invoice item amount visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "requireTermsOfServiceAgreement",
+          "description": "Indicates whether the customer is required to accept the terms of service.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoicePatchInput": {
+      "name": "InvoicePatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoicePatch` mutation. For each value if it's not provided - do not update it.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "Unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "customerId",
+          "description": "The customer identifier to associate with invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "status",
+          "description": "Status of the Invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "InvoiceCreateStatus",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "title",
+          "description": "Invoice title at the top of the document.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "subhead",
+          "description": "Invoice subheading text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "invoiceDate",
+          "description": "Date when invoice is issued.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Currency of the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to business's currency from the invoice's currency. Used to value the invoice income within Wave's accounting transactions.",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "dueDate",
+          "description": "Date when payment is due.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "items",
+          "description": "The line items (product, unit and price) that make up the invoiced sale. If provided, it would replace all items with given ones.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "InvoiceCreateItemInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Invoice memo (notes) text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "footer",
+          "description": "Invoice footer text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableAmexPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual invoice has been marked to not be payable by american express payment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableCreditCardPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual invoice has been marked to not be payable by card.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableBankPayments",
+          "description": "Within a business that is enabled to accept bank payments, indicates if this individual invoice has been marked to not be payable by bank payment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "itemTitle",
+          "description": "The label for the 'Item' column in the listing of line items on the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitTitle",
+          "description": "The label for the 'Unit' column in the listing of line items on the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "priceTitle",
+          "description": "The label for the 'Price' column in the listing of line items on the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "amountTitle",
+          "description": "The label for the 'Amount' (= unit x price) column in the listing of line items on the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideName",
+          "description": "Indicates whether item's product name in item column is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideDescription",
+          "description": "Indicates whether item's description in item column is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideUnit",
+          "description": "Indicates whether item's unit is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hidePrice",
+          "description": "Indicates whether item's price is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideAmount",
+          "description": "Indicates whether item's amount is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "poNumber",
+          "description": "Purchase order or sales order number for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "invoiceNumber",
+          "description": "Unique number assigned to the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "discounts",
+          "description": "The discounts applied to the invoice (currently limited to max 1).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "InvoiceDiscountInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "requireTermsOfServiceAgreement",
+          "description": "Indicates whether the customer is required to accept the terms of service.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoiceCloneInput": {
+      "name": "InvoiceCloneInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceClone` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceDeleteInput": {
+      "name": "InvoiceDeleteInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceDelete` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceSendInput": {
+      "name": "InvoiceSendInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceSend` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "to",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "subject",
+          "description": "Subject line of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "message",
+          "description": "Message body of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "attachPDF",
+          "description": "Include a PDF of the invoice as an attachment.",
+          "defaultValue": "false",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Boolean",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "fromAddress",
+          "description": "Email address from",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "ccMyself",
+          "description": "Carbon copy email.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoiceApproveInput": {
+      "name": "InvoiceApproveInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceApprove` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceMarkSentInput": {
+      "name": "InvoiceMarkSentInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoiceMarkSent` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "sendMethod",
+          "description": "How the invoice was sent.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "InvoiceSendMethod",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "sentAt",
+          "description": "When the invoice was sent.",
+          "defaultValue": null,
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoicePaymentCreateManualInput": {
+      "name": "InvoicePaymentCreateManualInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input of the `invoiceManualPaymentCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "paymentAccountId",
+          "description": "The unique identifier for the payment account.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "amount",
+          "description": "Payment amount.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "paymentDate",
+          "description": "Actual payment date.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Date",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "paymentMethod",
+          "description": "Payment method.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "InvoicePaymentMethod",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to payment account's currency from the invoice's currency. Only used if the invoice and payment accounts are in different currencies.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Notes.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoicePaymentPatchInput": {
+      "name": "InvoicePaymentPatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input of the `invoicePaymentUpdate` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the invoice payment.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "paymentAccountId",
+          "description": "The unique identifier for the payment account.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "amount",
+          "description": "Payment amount.",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "paymentDate",
+          "description": "Actual payment date.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "paymentMethod",
+          "description": "Payment method.",
+          "defaultValue": null,
+          "type": {
+            "name": "InvoicePaymentMethod",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to payment account's currency from the invoice's currency. Only used if the invoice and payment accounts are in different currencies.",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Notes.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "InvoicePaymentDeleteInput": {
+      "name": "InvoicePaymentDeleteInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `invoicePaymentDelete` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the invoice payment.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "InvoicePaymentReceiptSendInput": {
+      "name": "InvoicePaymentReceiptSendInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `InvoicePaymentReceiptSend` mutation.",
+      "inputFields": [
+        {
+          "name": "invoiceId",
+          "description": "The unique identifier for the invoice.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "invoicePaymentId",
+          "description": "The unique identifier for the invoice payment.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "to",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "message",
+          "description": "Message body of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "subject",
+          "description": "Subject of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "attachPdf",
+          "description": "Include a PDF of the invoice as an attachment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "ccMyself",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "fromAddress",
+          "description": "The address the email is from.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimateCreateInput": {
+      "name": "EstimateCreateInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateCreate` mutation.",
+      "inputFields": [
+        {
+          "name": "businessId",
+          "description": "The unique identifier for the business.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "customerId",
+          "description": "The customer identifier to associate with estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "status",
+          "description": "Status of the estimate",
+          "defaultValue": "DRAFT",
+          "type": {
+            "name": "EstimateCreateStatus",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Currency of the estimate. If not provided, will use the business's default currency.",
+          "defaultValue": null,
+          "type": {
+            "name": "CurrencyCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "title",
+          "description": "Estimate title at the top of the document. If not provided, will use the business's default estimate title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "subhead",
+          "description": "Estimate subheading text. If not provided, will use the business's default estimate subheading.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "estimateNumber",
+          "description": "Unique number assigned to the estimate. If not provided, one will be system generated.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "poNumber",
+          "description": "Purchase order or sales order number for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "estimateDate",
+          "description": "Date when estimate is issued. If not provided, will use today's date",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "dueDate",
+          "description": "Date when payment is due. If not provided, will apply the business's default estimate payment terms to `estimateDate` value.",
+          "defaultValue": null,
+          "type": {
+            "name": "Date",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to business's currency from the estimate's currency. Used to value the estimate income within Wave's accounting transactions.",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "items",
+          "description": "The line items (product, unit and price) that make up the estimated sale.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "EstimateCreateItemInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "discounts",
+          "description": "The discounts applied to estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "EstimateCreateDiscountInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "attachmentIds",
+          "description": "List of attachment ids to be associated with the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Estimate memo (notes) text. If not provided, will use the business's default estimate memo.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "footer",
+          "description": "Estimate footer text. If not provided, will use the business's default estimate footer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableAmexPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual estimate has been marked to not be payable by american express payment. If not provided, will use the business's default estimate settings american express payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableCreditCardPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual estiamte has been marked to not be payable by card. If not provided, will use the business's default estimate credit card payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableBankPayments",
+          "description": "Within a business that is enabled to accept bank payments, indicates if this individual estimate has been marked to not be payable by bank payment. If not provided, will use the business's default estimate bank payment state.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "itemTitle",
+          "description": "The label for the 'Item' column in the listing of line items on the estimate. If not provided, will use the business's default estimate column item title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitTitle",
+          "description": "The label for the 'Unit' column in the listing of line items on the estimate. If not provided, will use the business's default estimate column unit title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "priceTitle",
+          "description": "The label for the 'Price' column in the listing of line items on the estimate. If not provided, will use the business's default estimate column price title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "amountTitle",
+          "description": "The label for the 'Amount' (= unit x price) column in the listing of line items on the estimate. If not provided, will use the business's default estimate column amount title.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideName",
+          "description": "Indicates whether item's product name in item column is hidden in the line items listing. If not provided, will use the business's default estimate item name visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideDescription",
+          "description": "Indicates whether item's description in item column is hidden in the line items listing. If not provided, will use the business's default estimate item description visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideUnit",
+          "description": "Indicates whether item's unit is hidden in the line items listing. If not provided, will use the business's default estimate item unit visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hidePrice",
+          "description": "Indicates whether item's price is hidden in the line items listing. If not provided, will use the business's default estimate item price visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideAmount",
+          "description": "Indicates whether item's amount is hidden in the line items listing. If not provided, will use the business's default estimate item amount visibility.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "requireTermsOfServiceAgreement",
+          "description": "Indicates whether the customer is required to accept the terms of service.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositStatus",
+          "description": "Indicates whether the deposits can be accepted on the estimate",
+          "defaultValue": null,
+          "type": {
+            "name": "EstimateDepositStatusType",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositValue",
+          "description": "Indicates the value of the deposit either amount in cents or percentage",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositUnit",
+          "description": "Indicates the unit of the deposit value",
+          "defaultValue": null,
+          "type": {
+            "name": "EstimateDepositUnitType",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimatePatchInput": {
+      "name": "EstimatePatchInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimatePatch` mutation. For each value if it's not provided - do not update it.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "Unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "customerId",
+          "description": "The customer identifier to associate with estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "status",
+          "description": "Status of the Estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EstimateStatus",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "title",
+          "description": "Estimate title at the top of the document.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "subhead",
+          "description": "Estimate subheading text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "estimateDate",
+          "description": "Date when estimate is issued.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Date",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "currency",
+          "description": "Currency of the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "CurrencyCode",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "exchangeRate",
+          "description": "Exchange rate to business's currency from the estimate's currency. Used to value the estimate income within Wave's accounting transactions.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "dueDate",
+          "description": "Date when payment is due.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Date",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "items",
+          "description": "The line items (product, unit and price) that make up the estimated sale. If provided, it would replace all items with given ones.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "EstimateCreateItemInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "memo",
+          "description": "Estimate memo (notes) text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "footer",
+          "description": "Estimate footer text.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableAmexPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual estimate has been marked to not be payable by american express payment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableCreditCardPayments",
+          "description": "Within a business that is enabled to accept credit card payments, indicates if this individual estimate has been marked to not be payable by card.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "disableBankPayments",
+          "description": "Within a business that is enabled to accept bank payments, indicates if this individual estimate has been marked to not be payable by bank payment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "itemTitle",
+          "description": "The label for the 'Item' column in the listing of line items on the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitTitle",
+          "description": "The label for the 'Unit' column in the listing of line items on the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "priceTitle",
+          "description": "The label for the 'Price' column in the listing of line items on the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "amountTitle",
+          "description": "The label for the 'Amount' (= unit x price) column in the listing of line items on the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideName",
+          "description": "Indicates whether item's product name in item column is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideDescription",
+          "description": "Indicates whether item's description in item column is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideUnit",
+          "description": "Indicates whether item's unit is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hidePrice",
+          "description": "Indicates whether item's price is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideAmount",
+          "description": "Indicates whether item's amount is hidden in the line items listing.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "poNumber",
+          "description": "Purchase order or sales order number for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "estimateNumber",
+          "description": "Unique number assigned to the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "discounts",
+          "description": "The discounts applied to the estimate (currently limited to max 1).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "EstimateCreateDiscountInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "attachmentIds",
+          "description": "List of attachment ids to be associated with the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "requireTermsOfServiceAgreement",
+          "description": "Indicates whether the customer is required to accept the terms of service.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositStatus",
+          "description": "Indicates whether the deposits can be accepted on the estimate",
+          "defaultValue": null,
+          "type": {
+            "name": "EstimateDepositStatusType",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositValue",
+          "description": "Indicates the value of the deposit either amount in cents or percentage",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "depositUnit",
+          "description": "Indicates the unit of the deposit value",
+          "defaultValue": null,
+          "type": {
+            "name": "EstimateDepositUnitType",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimateCloneInput": {
+      "name": "EstimateCloneInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateClone` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateDeleteInput": {
+      "name": "EstimateDeleteInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateDelete` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateApproveInput": {
+      "name": "EstimateApproveInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateApprove` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateSendInput": {
+      "name": "EstimateSendInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateSend` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "to",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "subject",
+          "description": "Subject line of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "message",
+          "description": "Message body of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "attachPDF",
+          "description": "Include a PDF of the estimate as an attachment.",
+          "defaultValue": "false",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Boolean",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "fromAddress",
+          "description": "Email address from",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "ccMyself",
+          "description": "Carbon copy email.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "hideGrandTotal",
+          "description": "Hide grand total in the email.",
+          "defaultValue": "false",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "includeAttachments",
+          "description": "Whether attachments should be included in the email. Defaults to false.",
+          "defaultValue": "false",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimateMarkSentInput": {
+      "name": "EstimateMarkSentInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateMarkSent` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "sendMethod",
+          "description": "How the estimate was sent.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EstimateSendMethod",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "sentAt",
+          "description": "When the estimate was sent.",
+          "defaultValue": null,
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimateMarkAcceptedInput": {
+      "name": "EstimateMarkAcceptedInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateMarkAccepted` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateResetAcceptanceInput": {
+      "name": "EstimateResetAcceptanceInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateResetAcceptance` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateGeneratePdfInput": {
+      "name": "EstimateGeneratePdfInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateGeneratePdf` mutation",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The ID of the estimate",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateSendAcceptanceCustomerEmailInput": {
+      "name": "EstimateSendAcceptanceCustomerEmailInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimateSendAcceptanceCustomerEmail` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "ConvertEstimateToInvoiceInput": {
+      "name": "ConvertEstimateToInvoiceInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `convertEstimateToInvoice` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimatePaymentDeleteInput": {
+      "name": "EstimatePaymentDeleteInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `estimatePaymentDelete` mutation.",
+      "inputFields": [
+        {
+          "name": "id",
+          "description": "The unique identifier for the estimate payment.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "EstimateDepositPaymentReceiptSendInput": {
+      "name": "EstimateDepositPaymentReceiptSendInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Input to the `EstimateDepositPaymentReceiptSend` mutation.",
+      "inputFields": [
+        {
+          "name": "estimateId",
+          "description": "The unique identifier for the estimate.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "estimatePaymentId",
+          "description": "The unique identifier for the estimate payment.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "to",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "message",
+          "description": "Message body of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "subject",
+          "description": "Subject of the email.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "attachPdf",
+          "description": "Include a PDF of the invoice as an attachment.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "ccMyself",
+          "description": "Email addresses to receive an email.",
+          "defaultValue": null,
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "fromAddress",
+          "description": "The address the email is from.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "AddressInput": {
+      "name": "AddressInput",
+      "kind": "INPUT_OBJECT",
+      "description": "An address.",
+      "inputFields": [
+        {
+          "name": "addressLine1",
+          "description": "Address line 1 (Street address/PO Box/Company name).",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "addressLine2",
+          "description": "Address line 2 (Apartment/Suite/Unit/Building).",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "city",
+          "description": "City/District/Suburb/Town/Village.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "provinceCode",
+          "description": "State/County/Province/Region Code ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "countryCode",
+          "description": "Country Code.",
+          "defaultValue": null,
+          "type": {
+            "name": "CountryCode",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "postalCode",
+          "description": "Zip/Postal Code.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "MoneyTransactionCreateAnchorInput": {
+      "name": "MoneyTransactionCreateAnchorInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Anchor input.",
+      "inputFields": [
+        {
+          "name": "accountId",
+          "description": "ID of the anchor account.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "amount",
+          "description": "Amount of the transaction (unsigned).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "direction",
+          "description": "Direction of a transaction",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "TransactionDirection",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "MoneyTransactionCreateLineItemInput": {
+      "name": "MoneyTransactionCreateLineItemInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Line item input.",
+      "inputFields": [
+        {
+          "name": "accountId",
+          "description": "ID of the account associated with the line item.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "amount",
+          "description": "Amount of the line item (unsigned).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "balance",
+          "description": "How the account should change in relation to the amount.",
+          "defaultValue": "INCREASE",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "BalanceType",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "customerId",
+          "description": "ID of the customer associated with the line item.",
+          "defaultValue": null,
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "Optional description for line item.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "taxes",
+          "description": "Taxes applied to the line item.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "MoneyTransactionCreateSalesTaxInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MoneyTransactionDetails": {
+      "name": "MoneyTransactionDetails",
+      "kind": "INPUT_OBJECT",
+      "description": "Input for creating a money transaction.",
+      "inputFields": [
+        {
+          "name": "externalId",
+          "description": "ID of the transaction in an external system. If you don't have one, generate a UUID and provide it.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "date",
+          "description": "Date of the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Date",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "Description for the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "notes",
+          "description": "Extra notes about the transaction.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "anchor",
+          "description": "Anchor item.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "MoneyTransactionCreateAnchorInput",
+              "kind": "INPUT_OBJECT",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "lineItems",
+          "description": "Line items.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "MoneyTransactionCreateLineItemInput",
+                  "kind": "INPUT_OBJECT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceCreateItemInput": {
+      "name": "InvoiceCreateItemInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Invoice line item.",
+      "inputFields": [
+        {
+          "name": "productId",
+          "description": "Associated product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "Override product's description.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "quantity",
+          "description": "Number of units (rounded to nearest 8 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitPrice",
+          "description": "Override product's unitPrice. Price per unit in the major currency unit (rounded to nearest 8 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "taxes",
+          "description": "Taxes. To have the product's default sales taxes applied, provide `undefined` as the value.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "InvoiceCreateItemTaxInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "InvoiceDiscountInput": {
+      "name": "InvoiceDiscountInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Invoice Discount.",
+      "inputFields": [
+        {
+          "name": "amount",
+          "description": "Discount amount (for FIXED-type discounts).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "name",
+          "description": "Discount name.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "discountType",
+          "description": "Discount type.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "InvoiceDiscountType",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "percentage",
+          "description": "Discount percentage (for PERCENTAGE-type discounts).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "EstimateCreateItemInput": {
+      "name": "EstimateCreateItemInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Estimate line item.",
+      "inputFields": [
+        {
+          "name": "productId",
+          "description": "Associated product.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "incomeAccountClassicId",
+          "description": "Income account to associate with this item",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "name",
+          "description": "Product's name.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "Override product's description.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "quantity",
+          "description": "Number of units (rounded to nearest 8 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "unitPrice",
+          "description": "Override product's unitPrice. Price per unit in the major currency unit (rounded to nearest 8 decimal places with ties going away from zero).",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Decimal",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "taxes",
+          "description": "Taxes. To have the product's default sales taxes applied, provide `undefined` as the value.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": null,
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "EstimateCreateItemTaxInput",
+                "kind": "INPUT_OBJECT",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "EstimateCreateDiscountInput": {
+      "name": "EstimateCreateDiscountInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Estimate Discount.",
+      "inputFields": [
+        {
+          "name": "amount",
+          "description": "Discount amount (for FIXED-type discounts).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "name",
+          "description": "Discount name.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "discountType",
+          "description": "Discount type.",
+          "defaultValue": null,
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EstimateDiscountType",
+              "kind": "ENUM",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "percentage",
+          "description": "Discount percentage (for PERCENTAGE-type discounts).",
+          "defaultValue": null,
+          "type": {
+            "name": "Decimal",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    },
+    "CustomerShippingDetailsInput": {
+      "name": "CustomerShippingDetailsInput",
+      "kind": "INPUT_OBJECT",
+      "description": "Shipping details related to a customer.",
+      "inputFields": [
+        {
+          "name": "name",
+          "description": "Name or business name of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "address",
+          "description": "Address of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "AddressInput",
+            "kind": "INPUT_OBJECT",
+            "ofType": null
+          }
+        },
+        {
+          "name": "phone",
+          "description": "Telephone number of the customer.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "instructions",
+          "description": "Delivery instructions for handling.",
+          "defaultValue": null,
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    }
+  },
+  "enums": {
+    "AccountSubtypeValueCreateInput": {
+      "name": "AccountSubtypeValueCreateInput",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "CASH_AND_BANK",
+          "description": "Cash & Bank"
+        },
+        {
+          "name": "COST_OF_GOODS_SOLD",
+          "description": "Cost of Goods Sold"
+        },
+        {
+          "name": "CREDIT_CARD",
+          "description": "Credit Card"
+        },
+        {
+          "name": "CUSTOMER_PREPAYMENTS_AND_CREDITS",
+          "description": "Customer Prepayments and Customer Credits"
+        },
+        {
+          "name": "DEPRECIATION_AND_AMORTIZATION",
+          "description": "Depreciation and Amortization"
+        },
+        {
+          "name": "DISCOUNTS",
+          "description": "Discount"
+        },
+        {
+          "name": "DUE_FOR_PAYROLL",
+          "description": "Due For Payroll"
+        },
+        {
+          "name": "DUE_TO_YOU_AND_OTHER_OWNERS",
+          "description": "Due to You and Other Business Owners"
+        },
+        {
+          "name": "EXPENSE",
+          "description": "Expense"
+        },
+        {
+          "name": "INCOME",
+          "description": "Income"
+        },
+        {
+          "name": "INVENTORY",
+          "description": "Inventory"
+        },
+        {
+          "name": "LOANS",
+          "description": "Loan and Line of Credit"
+        },
+        {
+          "name": "MONEY_IN_TRANSIT",
+          "description": "Money in Transit"
+        },
+        {
+          "name": "NON_RETAINED_EARNINGS",
+          "description": "Business Owner Contribution"
+        },
+        {
+          "name": "OTHER_CURRENT_ASSETS",
+          "description": "Other Short-Term Asset"
+        },
+        {
+          "name": "OTHER_CURRENT_LIABILITY",
+          "description": "Other Short-Term Liability"
+        },
+        {
+          "name": "OTHER_INCOME",
+          "description": "Other Income"
+        },
+        {
+          "name": "OTHER_LONG_TERM_ASSETS",
+          "description": "Other Long-Term Asset"
+        },
+        {
+          "name": "OTHER_LONG_TERM_LIABILITY",
+          "description": "Other Long-Term Liability"
+        },
+        {
+          "name": "PAYABLE",
+          "description": "Payable"
+        },
+        {
+          "name": "PAYMENT_PROCESSING_FEES",
+          "description": "Payment Processing Fee"
+        },
+        {
+          "name": "PAYROLL_EXPENSES",
+          "description": "Payroll Expense"
+        },
+        {
+          "name": "PROPERTY_PLANT_EQUIPMENT",
+          "description": "Property, Plant, Equipment"
+        },
+        {
+          "name": "RECEIVABLE",
+          "description": "Receivable"
+        },
+        {
+          "name": "RETAINED_EARNINGS",
+          "description": "Retained Earnings: Profit and Business Owner Drawing"
+        },
+        {
+          "name": "VENDOR_PREPAYMENTS_AND_CREDITS",
+          "description": "Vendor Prepayments and Vendor Credits"
+        }
+      ]
+    },
+    "AccountTypeValue": {
+      "name": "AccountTypeValue",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "ASSET",
+          "description": "Represents the different types of economic resources owned or controlled by an entity."
+        },
+        {
+          "name": "EQUITY",
+          "description": "Represents the residual equity of an entity."
+        },
+        {
+          "name": "EXPENSE",
+          "description": "Represents the business's expenditures."
+        },
+        {
+          "name": "INCOME",
+          "description": "Represents the business's earnings."
+        },
+        {
+          "name": "LIABILITY",
+          "description": "Represents the different types of economic obligations of an entity."
+        }
+      ]
+    },
+    "TransactionDirection": {
+      "name": "TransactionDirection",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "DEPOSIT",
+          "description": "To put in."
+        },
+        {
+          "name": "WITHDRAWAL",
+          "description": "To remove from."
+        }
+      ]
+    },
+    "BalanceType": {
+      "name": "BalanceType",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "CREDIT",
+          "description": "Credit."
+        },
+        {
+          "name": "DEBIT",
+          "description": "Debit."
+        },
+        {
+          "name": "DECREASE",
+          "description": "Decrease using the inverse of the account's normal balance type. For contra accounts whose subtype is `DISCOUNTS` or `DEPRECIATION_AND_AMORTIZATION`, apply the amount in the account's normal balance type."
+        },
+        {
+          "name": "INCREASE",
+          "description": "Increase using the account's normal balance type. For contra accounts whose subtype is `DISCOUNTS` or `DEPRECIATION_AND_AMORTIZATION`, apply the amount in the inverse of the account's normal balance type."
+        }
+      ]
+    },
+    "InvoiceStatus": {
+      "name": "InvoiceStatus",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "DRAFT",
+          "description": "The invoice is still a draft."
+        },
+        {
+          "name": "OVERDUE",
+          "description": "The invoice is overdue."
+        },
+        {
+          "name": "OVERPAID",
+          "description": "The invoice was overpaid."
+        },
+        {
+          "name": "PAID",
+          "description": "The invoice was paid."
+        },
+        {
+          "name": "PARTIAL",
+          "description": "The invoice was partially paid."
+        },
+        {
+          "name": "SAVED",
+          "description": "The invoice was saved."
+        },
+        {
+          "name": "SENT",
+          "description": "The invoice was sent."
+        },
+        {
+          "name": "UNPAID",
+          "description": "The invoice is unpaid."
+        },
+        {
+          "name": "VIEWED",
+          "description": "The invoice was viewed."
+        }
+      ]
+    },
+    "EstimateStatus": {
+      "name": "EstimateStatus",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "ACCEPTED",
+          "description": "The estimate was accepted."
+        },
+        {
+          "name": "APPROVED",
+          "description": "The estimate was approved."
+        },
+        {
+          "name": "CONVERTED",
+          "description": "The estimate was converted."
+        },
+        {
+          "name": "DELETED",
+          "description": "The estimate was deleted."
+        },
+        {
+          "name": "DRAFT",
+          "description": "The estimate is still a draft."
+        },
+        {
+          "name": "EXPIRED",
+          "description": "The estimate was expired."
+        },
+        {
+          "name": "REJECTED",
+          "description": "The estimate was rejected."
+        },
+        {
+          "name": "SENT",
+          "description": "The estimate was sent."
+        },
+        {
+          "name": "VIEWED",
+          "description": "The estimate was viewed."
+        }
+      ]
+    },
+    "CurrencyCode": {
+      "name": "CurrencyCode",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "AED",
+          "description": "UAE dirham"
+        },
+        {
+          "name": "AFN",
+          "description": "Afghani"
+        },
+        {
+          "name": "ALL",
+          "description": "Lek"
+        },
+        {
+          "name": "AMD",
+          "description": "Armenian dram"
+        },
+        {
+          "name": "ANG",
+          "description": "Netherlands Antillean Guilder"
+        },
+        {
+          "name": "AOA",
+          "description": "Kwanza"
+        },
+        {
+          "name": "ARS",
+          "description": "Argentinian peso"
+        },
+        {
+          "name": "AUD",
+          "description": "Australian dollar"
+        },
+        {
+          "name": "AWG",
+          "description": "Aruban Guilder"
+        },
+        {
+          "name": "AZN",
+          "description": "New Manat"
+        },
+        {
+          "name": "BAM",
+          "description": "Convertible Marks"
+        },
+        {
+          "name": "BBD",
+          "description": "Barbados dollar"
+        },
+        {
+          "name": "BDT",
+          "description": "Taka"
+        },
+        {
+          "name": "BGN",
+          "description": "Lev"
+        },
+        {
+          "name": "BHD",
+          "description": "Bahraini dinar"
+        },
+        {
+          "name": "BIF",
+          "description": "Burundi franc"
+        },
+        {
+          "name": "BMD",
+          "description": "Bermuda dollar"
+        },
+        {
+          "name": "BND",
+          "description": "Brunei dollar"
+        },
+        {
+          "name": "BOB",
+          "description": "Boliviano"
+        },
+        {
+          "name": "BRL",
+          "description": "Real"
+        },
+        {
+          "name": "BSD",
+          "description": "Bahamian dollar"
+        },
+        {
+          "name": "BTN",
+          "description": "Ngultrum"
+        },
+        {
+          "name": "BWP",
+          "description": "Pula"
+        },
+        {
+          "name": "BYR",
+          "description": "Belarussian rouble"
+        },
+        {
+          "name": "BZD",
+          "description": "Belize dollar"
+        },
+        {
+          "name": "CAD",
+          "description": "Canadian dollar"
+        },
+        {
+          "name": "CDF",
+          "description": "Franc congolais"
+        },
+        {
+          "name": "CHF",
+          "description": "Swiss franc"
+        },
+        {
+          "name": "CLP",
+          "description": "Chilean peso"
+        },
+        {
+          "name": "CNY",
+          "description": "Ren-Min-Bi yuan"
+        },
+        {
+          "name": "COP",
+          "description": "Colombian peso"
+        },
+        {
+          "name": "CRC",
+          "description": "Costa Rican colon"
+        },
+        {
+          "name": "CUP",
+          "description": "Cuban peso"
+        },
+        {
+          "name": "CVE",
+          "description": "Cape Verde escudo"
+        },
+        {
+          "name": "CZK",
+          "description": "Czech koruna"
+        },
+        {
+          "name": "DJF",
+          "description": "Djibouti franc"
+        },
+        {
+          "name": "DKK",
+          "description": "Danish krone"
+        },
+        {
+          "name": "DOP",
+          "description": "Dominican peso"
+        },
+        {
+          "name": "DZD",
+          "description": "Algerian dinar"
+        },
+        {
+          "name": "EEK",
+          "description": "Estonian kroon"
+        },
+        {
+          "name": "EGP",
+          "description": "Egyptian pound"
+        },
+        {
+          "name": "ERN",
+          "description": "Nakfa"
+        },
+        {
+          "name": "ETB",
+          "description": "Ethiopian birr"
+        },
+        {
+          "name": "EUR",
+          "description": "Euro"
+        },
+        {
+          "name": "FJD",
+          "description": "Fiji dollar"
+        },
+        {
+          "name": "FKP",
+          "description": "Falkland Islands (Malvinas) Pound"
+        },
+        {
+          "name": "GBP",
+          "description": "Pound sterling"
+        },
+        {
+          "name": "GEL",
+          "description": "Lari"
+        },
+        {
+          "name": "GHS",
+          "description": "Ghana Cedi"
+        },
+        {
+          "name": "GIP",
+          "description": "Gibraltar pound"
+        },
+        {
+          "name": "GMD",
+          "description": "Dalasi"
+        },
+        {
+          "name": "GNF",
+          "description": "Guinean franc"
+        },
+        {
+          "name": "GTQ",
+          "description": "Quetzal"
+        },
+        {
+          "name": "GWP",
+          "description": "Guinean bissau Peso"
+        },
+        {
+          "name": "GYD",
+          "description": "Guyana dollar"
+        },
+        {
+          "name": "HKD",
+          "description": "Hong Kong dollar"
+        },
+        {
+          "name": "HNL",
+          "description": "Lempira"
+        },
+        {
+          "name": "HRK",
+          "description": "Kuna"
+        },
+        {
+          "name": "HTG",
+          "description": "Haitian gourde"
+        },
+        {
+          "name": "HUF",
+          "description": "Forint"
+        },
+        {
+          "name": "IDR",
+          "description": "Rupiah"
+        },
+        {
+          "name": "ILS",
+          "description": "New Israeli sheqel"
+        },
+        {
+          "name": "INR",
+          "description": "Indian rupee"
+        },
+        {
+          "name": "IQD",
+          "description": "Iraqi dinar"
+        },
+        {
+          "name": "IRR",
+          "description": "Iranian rial"
+        },
+        {
+          "name": "ISK",
+          "description": "Icelandic Krona"
+        },
+        {
+          "name": "JMD",
+          "description": "Jamaican dollar"
+        },
+        {
+          "name": "JOD",
+          "description": "Jordanian dinar"
+        },
+        {
+          "name": "JPY",
+          "description": "Yen"
+        },
+        {
+          "name": "KES",
+          "description": "Kenyan shilling"
+        },
+        {
+          "name": "KGS",
+          "description": "Kyrgyz Som"
+        },
+        {
+          "name": "KHR",
+          "description": "Riel"
+        },
+        {
+          "name": "KMF",
+          "description": "Comoro franc"
+        },
+        {
+          "name": "KRW",
+          "description": "Won"
+        },
+        {
+          "name": "KWD",
+          "description": "Kuwaiti dinar"
+        },
+        {
+          "name": "KYD",
+          "description": "Cayman Islands dollar"
+        },
+        {
+          "name": "KZT",
+          "description": "Tenge"
+        },
+        {
+          "name": "LAK",
+          "description": "Kip"
+        },
+        {
+          "name": "LBP",
+          "description": "Lebanese pound"
+        },
+        {
+          "name": "LKR",
+          "description": "Sri Lankan rupee"
+        },
+        {
+          "name": "LRD",
+          "description": "Liberian dollar"
+        },
+        {
+          "name": "LSL",
+          "description": "Loti"
+        },
+        {
+          "name": "LTL",
+          "description": "Lithuanian litus"
+        },
+        {
+          "name": "LVL",
+          "description": "Latvian lats"
+        },
+        {
+          "name": "LYD",
+          "description": "Libyan dinar"
+        },
+        {
+          "name": "MAD",
+          "description": "Moroccan dirham"
+        },
+        {
+          "name": "MDL",
+          "description": "Moldovan leu"
+        },
+        {
+          "name": "MGA",
+          "description": "Malagasy Ariary"
+        },
+        {
+          "name": "MKD",
+          "description": "Denar"
+        },
+        {
+          "name": "MMK",
+          "description": "Kyat"
+        },
+        {
+          "name": "MNT",
+          "description": "Tugrik"
+        },
+        {
+          "name": "MOP",
+          "description": "Pataca"
+        },
+        {
+          "name": "MRO",
+          "description": "Ouguiya"
+        },
+        {
+          "name": "MRU",
+          "description": "Ouguiya"
+        },
+        {
+          "name": "MUR",
+          "description": "Mauritian rupee"
+        },
+        {
+          "name": "MVR",
+          "description": "Rufiyaa"
+        },
+        {
+          "name": "MWK",
+          "description": "Kwacha"
+        },
+        {
+          "name": "MXN",
+          "description": "Mexican peso"
+        },
+        {
+          "name": "MYR",
+          "description": "Malaysian ringgit"
+        },
+        {
+          "name": "MZN",
+          "description": "Metical"
+        },
+        {
+          "name": "NAD",
+          "description": "Namibian dollar"
+        },
+        {
+          "name": "NGN",
+          "description": "Naira"
+        },
+        {
+          "name": "NIO",
+          "description": "Cordoba Oro"
+        },
+        {
+          "name": "NOK",
+          "description": "Norwegian krone"
+        },
+        {
+          "name": "NPR",
+          "description": "Nepalese rupee"
+        },
+        {
+          "name": "NZD",
+          "description": "New Zealand dollar"
+        },
+        {
+          "name": "OMR",
+          "description": "Omani rial"
+        },
+        {
+          "name": "PAB",
+          "description": "Balboa"
+        },
+        {
+          "name": "PEN",
+          "description": "Nuevo Sol"
+        },
+        {
+          "name": "PGK",
+          "description": "Kina"
+        },
+        {
+          "name": "PHP",
+          "description": "Philippine peso"
+        },
+        {
+          "name": "PKR",
+          "description": "Pakistani rupee"
+        },
+        {
+          "name": "PLN",
+          "description": "Zloty"
+        },
+        {
+          "name": "PYG",
+          "description": "Guarani"
+        },
+        {
+          "name": "QAR",
+          "description": "Qatari riyal"
+        },
+        {
+          "name": "RON",
+          "description": "New Leu"
+        },
+        {
+          "name": "RSD",
+          "description": "Serbian Dinar"
+        },
+        {
+          "name": "RUB",
+          "description": "Russian rouble"
+        },
+        {
+          "name": "RWF",
+          "description": "Rwanda franc"
+        },
+        {
+          "name": "SAR",
+          "description": "Saudi riyal"
+        },
+        {
+          "name": "SBD",
+          "description": "Solomon Islands Dollar"
+        },
+        {
+          "name": "SCR",
+          "description": "Seychelles rupee"
+        },
+        {
+          "name": "SDG",
+          "description": "Sudanese Pound"
+        },
+        {
+          "name": "SEK",
+          "description": "Swedish Krona"
+        },
+        {
+          "name": "SGD",
+          "description": "Singapore dollar"
+        },
+        {
+          "name": "SHP",
+          "description": "Saint Helena Pound"
+        },
+        {
+          "name": "SLL",
+          "description": "Leone"
+        },
+        {
+          "name": "SOS",
+          "description": "Somali shilling"
+        },
+        {
+          "name": "SRD",
+          "description": "Surinam dollar"
+        },
+        {
+          "name": "SSP",
+          "description": "South Sudanese pound"
+        },
+        {
+          "name": "STD",
+          "description": "Dobra"
+        },
+        {
+          "name": "SVC",
+          "description": "El Salvador colon"
+        },
+        {
+          "name": "SYP",
+          "description": "Syrian pound"
+        },
+        {
+          "name": "SZL",
+          "description": "Lilangeni"
+        },
+        {
+          "name": "THB",
+          "description": "Baht"
+        },
+        {
+          "name": "TJS",
+          "description": "Somoni"
+        },
+        {
+          "name": "TMM",
+          "description": "Manat"
+        },
+        {
+          "name": "TND",
+          "description": "Tunisian dinar"
+        },
+        {
+          "name": "TOP",
+          "description": "Pa'anga"
+        },
+        {
+          "name": "TRY",
+          "description": "Turkish Lira"
+        },
+        {
+          "name": "TTD",
+          "description": "Trinidad and Tobago dollar"
+        },
+        {
+          "name": "TWD",
+          "description": "Taiwan New Dollar"
+        },
+        {
+          "name": "TZS",
+          "description": "Tanzanian shilling"
+        },
+        {
+          "name": "UAH",
+          "description": "Hryvnia"
+        },
+        {
+          "name": "UGX",
+          "description": "Ugandan shilling"
+        },
+        {
+          "name": "USD",
+          "description": "United States dollar"
+        },
+        {
+          "name": "UYU",
+          "description": "Uruguayo peso"
+        },
+        {
+          "name": "UZS",
+          "description": "Uzbekistan sum"
+        },
+        {
+          "name": "VEF",
+          "description": "Bolivar Fuerte"
+        },
+        {
+          "name": "VND",
+          "description": "Dong"
+        },
+        {
+          "name": "VUV",
+          "description": "Vatu"
+        },
+        {
+          "name": "WST",
+          "description": "Samoan Tala"
+        },
+        {
+          "name": "XAF",
+          "description": "CFA Franc - BEAC"
+        },
+        {
+          "name": "XCD",
+          "description": "Eastern Caribbean dollar"
+        },
+        {
+          "name": "XOF",
+          "description": "CFA franc - BCEAO"
+        },
+        {
+          "name": "XPF",
+          "description": "Comptoirs Francais du Pacifique Francs"
+        },
+        {
+          "name": "YER",
+          "description": "Yemeni rial"
+        },
+        {
+          "name": "ZAR",
+          "description": "Rand"
+        },
+        {
+          "name": "ZMK",
+          "description": "Kwacha"
+        },
+        {
+          "name": "ZMW",
+          "description": "Kwacha"
+        },
+        {
+          "name": "ZWD",
+          "description": "Zimbabwean dollar"
+        }
+      ]
+    },
+    "InvoiceCreateStatus": {
+      "name": "InvoiceCreateStatus",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "DRAFT",
+          "description": "The invoice is still a draft."
+        },
+        {
+          "name": "SAVED",
+          "description": "The invoice was saved."
+        }
+      ]
+    },
+    "EstimateCreateStatus": {
+      "name": "EstimateCreateStatus",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "DRAFT",
+          "description": "The estimate is still a draft."
+        }
+      ]
+    },
+    "EstimateDepositStatusType": {
+      "name": "EstimateDepositStatusType",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "DISABLED",
+          "description": "Estimate deposit disabled."
+        },
+        {
+          "name": "ENABLED_MANDATORY",
+          "description": "ENABLED_MANDATORY"
+        },
+        {
+          "name": "ENABLED_OPTIONAL",
+          "description": "ENABLED_OPTIONAL"
+        }
+      ]
+    },
+    "EstimateDepositUnitType": {
+      "name": "EstimateDepositUnitType",
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "AMOUNT",
+          "description": "Estimate deposit value is an amount in cents."
+        },
+        {
+          "name": "PERCENTAGE",
+          "description": "Estimate deposit value is a percentage."
+        }
+      ]
+    }
+  },
+  "missing": [
+    "MoneyTransactionAnchor",
+    "MoneyTransactionLineItem",
+    "InvoiceCreateItem",
+    "InvoicePatchItem",
+    "EstimateCreateItem",
+    "EstimatePatchItem",
+    "CustomerAddressInput",
+    "PaymentMethod"
+  ]
+}
